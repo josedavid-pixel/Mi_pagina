@@ -30,11 +30,11 @@ export default function Home() {
             </div>
           </div>
           <Image
-            src="/hero-photo.jpg"
+            src="https://placehold.co/1000x1000.png"
             width="1000"
             height="1000"
             alt="Foto de Jose David en un evento para desarrolladores"
-            className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-top"
+            className="mx-auto aspect-square overflow-hidden rounded-xl object-cover"
             data-ai-hint="man portrait"
           />
         </div>
