@@ -14,7 +14,7 @@ export default function Home() {
         <div className="container px-4 md:px-6 grid gap-10 lg:grid-cols-2 lg:gap-16">
           <div className="flex flex-col justify-center space-y-6">
             <div className="space-y-4">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-6xl/none text-primary">
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-6xl/none text-primary font-headline">
                 Desarrollador de Software y Entusiasta de la IA
               </h1>
               <p className="max-w-[600px] text-muted-foreground md:text-xl">
@@ -30,12 +30,12 @@ export default function Home() {
             </div>
           </div>
           <Image
-            src="https://placehold.co/1000x1000.png"
+            src="/hero-photo.jpg"
             width="1000"
             height="1000"
-            alt="Hero"
-            className="mx-auto aspect-square overflow-hidden rounded-xl object-cover"
-            data-ai-hint="abstract technology illustration"
+            alt="Foto de Jose David en un evento para desarrolladores"
+            className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-top"
+            data-ai-hint="man portrait"
           />
         </div>
       </section>
@@ -45,7 +45,7 @@ export default function Home() {
           <div className="container px-4 md:px-6">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                   <div className="space-y-2">
-                      <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-primary">Sobre Mí</h2>
+                      <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-primary font-headline">Sobre Mí</h2>
                   </div>
               </div>
               <div className="mx-auto max-w-3xl py-12 text-center text-muted-foreground space-y-4">
@@ -67,7 +67,7 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-primary">Mis Proyectos</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-primary font-headline">Mis Proyectos</h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Una selección de proyectos que demuestran mi pasión por el desarrollo y la innovación.
               </p>
