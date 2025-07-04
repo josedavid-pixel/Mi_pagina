@@ -29,7 +29,7 @@ export default function Home() {
             </div>
             <div className="flex items-center justify-center">
                 <Avatar className="h-48 w-48">
-                    <AvatarImage src="https://placehold.co/192x192.png" alt="@josedavid" data-ai-hint="portrait person" />
+                    <AvatarImage src="/profile.png" alt="Jose David" />
                     <AvatarFallback>JD</AvatarFallback>
                 </Avatar>
             </div>
