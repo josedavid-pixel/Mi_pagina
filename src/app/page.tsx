@@ -2,6 +2,8 @@ import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import ContactForm from "@/components/contact-form";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
@@ -12,16 +14,22 @@ export default function Home() {
             <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-primary">
-                  Hola, soy Alex Doe
+                  Hola, soy Jose David
                 </h1>
                 <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                  Desarrollador de software apasionado por la inteligencia artificial y la creación de experiencias de usuario intuitivas. Bienvenido a mi rincón digital.
+ Apasionado por la Inteligencia Artificial y el desarrollo de software, mi viaje en el mundo de la tecnología se impulsa por la constante búsqueda de soluciones innovadoras. Cuento con un sólido dominio de las herramientas de Google, destacando mi experiencia con Firebase, plataforma que utilizo activamente en mis proyectos.
+
+ Una de mis experiencias más enriquecedoras fue participar en la hackathon "Build with IA", organizada por GDG Santa Cruz. Fue una oportunidad increíble para poner a prueba mis habilidades, colaborar en un entorno desafiante y explorar el potencial de la inteligencia artificial en aplicaciones prácticas.
+
+ Actualmente, además de mis proyectos personales, colaboro en iniciativas de software en la Universidad Autónoma Gabriel René Moreno (UAGRM) y he estado involucrado en el desarrollo de soluciones tecnológicas para el sector agroindustrial. Estas experiencias me han permitido aplicar mis conocimientos en contextos reales y comprender las necesidades específicas de diferentes industrias.
+
+ Mi objetivo es seguir aprendiendo, creando y contribuyendo al desarrollo de software que genere un impacto positivo, siempre explorando las fronteras de la inteligencia artificial y las tecnologías emergentes.
                 </p>
               </div>
             </div>
             <div className="flex items-center justify-center">
                 <Avatar className="h-48 w-48">
-                    <AvatarImage src="https://placehold.co/200x200.png" alt="@alexdoe" data-ai-hint="portrait person" />
+                    <AvatarImage src="https://placehold.co/192x192.png" alt="@josedavid" data-ai-hint="portrait person" />
                     <AvatarFallback>AD</AvatarFallback>
                 </Avatar>
             </div>
@@ -105,6 +113,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <ContactForm />
+      <Footer />
     </div>
   );
 }

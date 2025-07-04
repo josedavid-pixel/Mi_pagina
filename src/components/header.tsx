@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { CodeXml } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { Button } from "./ui/button";
-
+import { Button } from "@/components/ui/button";
+// Corrected import path for Button
 export function Header() {
   return (
     <header className="px-4 lg:px-6 h-16 flex items-center bg-card/80 backdrop-blur-sm border-b sticky top-0 z-50">
@@ -26,8 +26,10 @@ export function Header() {
             Blog
           </Link>
         </Button>
+        {/* Social media links */}
         <ThemeToggle />
       </nav>
     </header>
   );
 }
+
