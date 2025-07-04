@@ -65,8 +65,8 @@ function ContactForm() {
   };
 
   return (
-    <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-card">
-        <Card className="w-full max-w-2xl mx-auto shadow-none border-none">
+    <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
+        <Card className="w-full max-w-2xl mx-auto">
         <CardHeader className="text-center">
             <CardTitle className="text-3xl font-bold tracking-tighter sm:text-4xl text-primary">Contáctame</CardTitle>
         </CardHeader>

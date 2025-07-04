@@ -1,43 +1,69 @@
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import ContactForm from "@/components/contact-form";
 import Footer from "@/components/footer";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="flex flex-col">
+      {/* Hero Section */}
       <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-background">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center gap-10">
-            <div className="flex flex-col justify-center space-y-4">
-              <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-primary">
-                  Hola, soy Jose David
-                </h1>
-                <p className="max-w-[600px] text-muted-foreground md:text-xl">
- Apasionado por la Inteligencia Artificial y el desarrollo de software, mi viaje en el mundo de la tecnología se impulsa por la constante búsqueda de soluciones innovadoras. Cuento con un sólido dominio de las herramientas de Google, destacando mi experiencia con Firebase, plataforma que utilizo activamente en mis proyectos.
-
- Una de mis experiencias más enriquecedoras fue participar en la hackathon "Build with IA", organizada por GDG Santa Cruz. Fue una oportunidad increíble para poner a prueba mis habilidades, colaborar en un entorno desafiante y explorar el potencial de la inteligencia artificial en aplicaciones prácticas.
-
- Actualmente, además de mis proyectos personales, colaboro en iniciativas de software en la Universidad Autónoma Gabriel René Moreno (UAGRM) y he estado involucrado en el desarrollo de soluciones tecnológicas para el sector agroindustrial. Estas experiencias me han permitido aplicar mis conocimientos en contextos reales y comprender las necesidades específicas de diferentes industrias.
-
- Mi objetivo es seguir aprendiendo, creando y contribuyendo al desarrollo de software que genere un impacto positivo, siempre explorando las fronteras de la inteligencia artificial y las tecnologías emergentes.
-                </p>
-              </div>
+        <div className="container px-4 md:px-6 grid gap-10 lg:grid-cols-2 lg:gap-16">
+          <div className="flex flex-col justify-center space-y-6">
+            <div className="space-y-4">
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-6xl/none text-primary">
+                Desarrollador de Software y Entusiasta de la IA
+              </h1>
+              <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                Hola, soy Jose David. Apasionado por crear soluciones innovadoras que combinan el desarrollo de software y el poder de la inteligencia artificial.
+              </p>
             </div>
-            <div className="flex items-center justify-center">
-                <Avatar className="h-48 w-48">
-                    <AvatarImage src="/profile.png" alt="Jose David" />
-                    <AvatarImage src="/images/josedavid.png" alt="Jose David" />
-                </Avatar>
+            <div className="flex flex-col gap-2 min-[400px]:flex-row">
+              <Button asChild size="lg">
+                <Link href="/#projects">
+                  Ver Proyectos
+                </Link>
+              </Button>
             </div>
           </div>
+          <Image
+            src="https://placehold.co/1000x1000.png"
+            width="1000"
+            height="1000"
+            alt="Hero"
+            className="mx-auto aspect-square overflow-hidden rounded-xl object-cover"
+            data-ai-hint="abstract technology illustration"
+          />
         </div>
       </section>
 
-      <section id="projects" className="w-full py-12 md:py-24 lg:py-32 bg-card">
+      {/* About Me Details Section */}
+      <section id="about-details" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
+          <div className="container px-4 md:px-6">
+              <div className="flex flex-col items-center justify-center space-y-4 text-center">
+                  <div className="space-y-2">
+                      <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-primary">Sobre Mí</h2>
+                  </div>
+              </div>
+              <div className="mx-auto max-w-3xl py-12 text-center text-muted-foreground space-y-4">
+                  <p>
+                      Mi viaje en el mundo de la tecnología se impulsa por la constante búsqueda de soluciones innovadoras. Cuento con un sólido dominio de las herramientas de Google, destacando mi experiencia con Firebase, plataforma que utilizo activamente en mis proyectos.
+                  </p>
+                  <p>
+                      Una de mis experiencias más enriquecedoras fue participar en la hackathon "Build with IA", organizada por GDG Santa Cruz. Fue una oportunidad increíble para poner a prueba mis habilidades, colaborar en un entorno desafiante y explorar el potencial de la inteligencia artificial en aplicaciones prácticas. Actualmente, además de mis proyectos personales, colaboro en iniciativas de software en la Universidad Autónoma Gabriel René Moreno (UAGRM) y he estado involucrado en el desarrollo de soluciones tecnológicas para el sector agroindustrial.
+                  </p>
+                  <p>
+                      Mi objetivo es seguir aprendiendo, creando y contribuyendo al desarrollo de software que genere un impacto positivo, siempre explorando las fronteras de la inteligencia artificial y las tecnologías emergentes.
+                  </p>
+              </div>
+          </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="w-full py-12 md:py-24 lg:py-32 bg-background">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">

@@ -26,8 +26,8 @@ export function Header() {
             Blog
           </Link>
         </Button>
-        <Button variant="link" asChild>
-          <Link href="/#contact" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
+        <Button asChild>
+          <Link href="/#contact" prefetch={false}>
             Contacto
           </Link>
         </Button>
