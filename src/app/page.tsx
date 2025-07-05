@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import ContactForm from "@/components/contact-form";
@@ -30,7 +31,7 @@ export default function Home() {
             </div>
           </div>
           <Image
-            src="https://placehold.co/1000x1000.png"
+            src="/jose.jpg"
             width="1000"
             height="1000"
             alt="Foto de Jose David en un evento para desarrolladores"
