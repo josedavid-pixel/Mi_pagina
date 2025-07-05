@@ -24,36 +24,42 @@ export default function BlogPage() {
       </section>
 
       <div className="container mx-auto px-4 md:px-6 pb-12">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post) => (
-            <Link href={`/blog/${post.slug}`} key={post.slug} className="group block">
-              <Card className="flex h-full flex-col overflow-hidden rounded-lg border-2 border-transparent transition-all duration-300 hover:border-primary hover:shadow-2xl">
-                <div className="relative w-full overflow-hidden aspect-video">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    data-ai-hint={post.aiHint}
-                  />
-                </div>
-                <CardHeader>
-                  <div className="flex flex-wrap gap-2 mb-2">
-                    {post.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
+        {posts.length > 0 ? (
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {posts.map((post) => (
+              <Link href={`/blog/${post.slug}`} key={post.slug} className="group block">
+                <Card className="flex h-full flex-col overflow-hidden rounded-lg border-2 border-transparent transition-all duration-300 hover:border-primary hover:shadow-2xl">
+                  <div className="relative w-full overflow-hidden aspect-video">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      data-ai-hint={post.aiHint}
+                    />
                   </div>
-                  <CardTitle className="text-xl font-bold group-hover:text-primary">{post.title}</CardTitle>
-                  <CardDescription className="pt-2">{post.description}</CardDescription>
-                </CardHeader>
-                <CardFooter className="mt-auto">
-                  <div className="flex items-center font-semibold text-primary">
-                    Leer más
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </div>
-                </CardFooter>
-              </Card>
-            </Link>
-          ))}
-        </div>
+                  <CardHeader>
+                    <div className="flex flex-wrap gap-2 mb-2">
+                      {post.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
+                    </div>
+                    <CardTitle className="text-xl font-bold group-hover:text-primary">{post.title}</CardTitle>
+                    <CardDescription className="pt-2">{post.description}</CardDescription>
+                  </CardHeader>
+                  <CardFooter className="mt-auto">
+                    <div className="flex items-center font-semibold text-primary">
+                      Leer más
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </div>
+                  </CardFooter>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-12">
+            <p className="text-muted-foreground">Aún no he publicado ningún artículo, ¡pero estoy trabajando en nuevas ideas!</p>
+          </div>
+        )}
       </div>
     </div>
   );
