@@ -27,7 +27,7 @@ export const posts = [
     content: 'Mi participación en la GDG Santa Cruz Hackathon "Build with IA" fue una experiencia increíblemente enriquecedora. Trabajando en equipo bajo la presión del tiempo, desarrollamos un prototipo que integraba capacidades de IA para resolver un problema específico. Enfrentamos desafíos técnicos interesantes, especialmente al integrar los modelos de IA y asegurar la fluidez de la aplicación. La hackathon me permitió poner a prueba mis habilidades, aprender de mis compañeros de equipo y comprender mejor el proceso de ideación y desarrollo rápido. Fue una demostración del poder de la colaboración y la creatividad en un entorno desafiante, y me motivó a seguir explorando el potencial de la IA en proyectos futuros.',
     image: '/images/hackathon.jpg', // Reemplaza con la ruta a tu imagen
     tags: ['Hackathon', 'Comunidad', 'IA'],
-    aiHint: 'people coding collaboration'
+    aiHint: 'people coding collaboration',
   },
   {
     slug: 'explorando-ia-desarrollo',

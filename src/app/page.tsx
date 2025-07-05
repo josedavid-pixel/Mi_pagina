@@ -53,7 +53,7 @@ export default function Home() {
  ¡Hola! Soy José David Borja Vásquez, estudiante de Ingeniería en Sistemas en la Facultad Integral de Ichilo de la UAGRM. Me apasiona el mundo de la tecnología, especialmente el desarrollo web y la inteligencia artificial, áreas en las que estoy enfocado y aprendiendo constantemente.
                   </p>
                   <p>
-                      Me considero una persona curiosa, autodidacta y comprometida con mi formación. A lo largo de mi carrera universitaria he participado en actividades como ferias tecnológicas, talleres y eventos de innovación. Una de las experiencias más importantes fue mi participación en el evento Build With AI realizado en la Universidad Católica Boliviana (UCB), donde tuve la oportunidad de compartir ideas y aprender junto a otros apasionados por la tecnología.
+                      Me considero una persona curiosa, autodidacta y comprometido con mi formación. A lo largo de mi carrera universitaria he participado en actividades como ferias tecnológicas, talleres y eventos de innovación. Una de las experiencias más importantes fue mi participación en el evento Build With AI realizado en la Universidad Católica Boliviana (UCB), donde tuve la oportunidad de compartir ideas y aprender junto a otros apasionados por la tecnología.
                   </p>
                   <p>
  Además de la programación, disfruto de tocar guitarra, jugar fútbol y explorar nuevas herramientas digitales. Me encanta aprender y desafiarme constantemente con nuevos proyectos y tecnologías.
