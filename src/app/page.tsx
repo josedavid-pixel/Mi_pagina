@@ -77,22 +77,22 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 py-12 sm:grid-cols-2 lg:gap-6">
-            <Card className="flex flex-col h-full transition-colors duration-300 border-2 border-card hover:border-primary">
+          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 py-12 sm:grid-cols-2 lg:gap-6">
+            <Card className="flex flex-col transition-colors duration-300 border-2 border-card hover:border-primary">
               <CardHeader className="flex-grow p-4">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-sm text-muted-foreground">2024</span>
-                  <div className="flex items-center gap-1 text-sm font-medium text-muted-foreground">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-xs text-muted-foreground">2024</span>
+                  <div className="flex items-center gap-1 text-xs font-medium text-muted-foreground">
                     <Star className="w-4 h-4 text-primary" />
                     142
                   </div>
                 </div>
-                <CardTitle className="mb-1 text-lg">
+                <CardTitle className="mb-1 text-base">
                   <Link href="#" className="font-semibold text-foreground hover:text-primary hover:underline" target="_blank">
                     Gestor de Tareas con IA
                   </Link>
                 </CardTitle>
-                <CardDescription>Aplicación web para la gestión de tareas con priorización automática.</CardDescription>
+                <CardDescription className="text-sm">Aplicación web para la gestión de tareas con priorización automática.</CardDescription>
               </CardHeader>
               <CardFooter className="p-4 mt-auto">
                 <div className="flex flex-wrap gap-2">
@@ -105,21 +105,21 @@ export default function Home() {
                 </div>
               </CardFooter>
             </Card>
-            <Card className="flex flex-col h-full transition-colors duration-300 border-2 border-card hover:border-primary">
+            <Card className="flex flex-col transition-colors duration-300 border-2 border-card hover:border-primary">
               <CardHeader className="flex-grow p-4">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-sm text-muted-foreground">2023</span>
-                  <div className="flex items-center gap-1 text-sm font-medium text-muted-foreground">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-xs text-muted-foreground">2023</span>
+                  <div className="flex items-center gap-1 text-xs font-medium text-muted-foreground">
                     <Star className="w-4 h-4 text-primary" />
                     230
                   </div>
                 </div>
-                <CardTitle className="mb-1 text-lg">
+                <CardTitle className="mb-1 text-base">
                   <Link href="#" className="font-semibold text-foreground hover:text-primary hover:underline" target="_blank">
                     E-commerce con Recomendaciones
                   </Link>
                 </CardTitle>
-                <CardDescription>Plataforma de e-commerce con IA para recomendaciones de productos.</CardDescription>
+                <CardDescription className="text-sm">Plataforma de e-commerce con IA para recomendaciones de productos.</CardDescription>
               </CardHeader>
               <CardFooter className="p-4 mt-auto">
                 <div className="flex flex-wrap gap-2">
@@ -129,21 +129,21 @@ export default function Home() {
                 </div>
               </CardFooter>
             </Card>
-            <Card className="flex flex-col h-full transition-colors duration-300 border-2 border-card hover:border-primary">
+            <Card className="flex flex-col transition-colors duration-300 border-2 border-card hover:border-primary">
               <CardHeader className="flex-grow p-4">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-sm text-muted-foreground">2023</span>
-                  <div className="flex items-center gap-1 text-sm font-medium text-muted-foreground">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-xs text-muted-foreground">2023</span>
+                  <div className="flex items-center gap-1 text-xs font-medium text-muted-foreground">
                     <Star className="w-4 h-4 text-primary" />
                     89
                   </div>
                 </div>
-                <CardTitle className="mb-1 text-lg">
+                <CardTitle className="mb-1 text-base">
                   <Link href="#" className="font-semibold text-foreground hover:text-primary hover:underline" target="_blank">
                     Visualizador de Datos de Mercado
                   </Link>
                 </CardTitle>
-                <CardDescription>Herramienta interactiva para el análisis de datos de mercado.</CardDescription>
+                <CardDescription className="text-sm">Herramienta interactiva para el análisis de datos de mercado.</CardDescription>
               </CardHeader>
               <CardFooter className="p-4 mt-auto">
                 <div className="flex flex-wrap gap-2">
@@ -153,21 +153,21 @@ export default function Home() {
                 </div>
               </CardFooter>
             </Card>
-             <Card className="flex flex-col h-full transition-colors duration-300 border-2 border-card hover:border-primary">
+             <Card className="flex flex-col transition-colors duration-300 border-2 border-card hover:border-primary">
               <CardHeader className="flex-grow p-4">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-sm text-muted-foreground">2024</span>
-                  <div className="flex items-center gap-1 text-sm font-medium text-muted-foreground">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-xs text-muted-foreground">2024</span>
+                  <div className="flex items-center gap-1 text-xs font-medium text-muted-foreground">
                     <Star className="w-4 h-4 text-primary" />
                     315
                   </div>
                 </div>
-                <CardTitle className="mb-1 text-lg">
+                <CardTitle className="mb-1 text-base">
                   <Link href="#" className="font-semibold text-foreground hover:text-primary hover:underline">
                     David.dev (Este Sitio)
                   </Link>
                 </CardTitle>
-                <CardDescription>El código fuente de este portafolio y blog personal.</CardDescription>
+                <CardDescription className="text-sm">El código fuente de este portafolio y blog personal.</CardDescription>
               </CardHeader>
               <CardFooter className="p-4 mt-auto">
                 <div className="flex flex-wrap gap-2">
