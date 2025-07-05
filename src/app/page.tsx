@@ -1,10 +1,10 @@
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import ContactForm from "@/components/contact-form";
 import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Star } from "lucide-react";
 
 export default function Home() {
   return (
@@ -73,71 +73,108 @@ export default function Home() {
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-primary font-headline">Mis Proyectos</h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
-                Una selección de proyectos que demuestran mi pasión por el desarrollo y la innovación.
+                Una selección de proyectos de código abierto y personales que he realizado a lo largo de los años.
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-            <Card className="hover:shadow-lg transition-shadow duration-300">
-              <CardHeader>
-                <CardTitle>Proyecto Uno</CardTitle>
-                <CardDescription className="text-muted-foreground">Una aplicación web para la gestión de tareas.</CardDescription>
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 sm:grid-cols-2 lg:gap-8">
+            <Card className="flex flex-col h-full transition-colors duration-300 border-2 border-card hover:border-primary">
+              <CardHeader className="flex-grow">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-sm text-muted-foreground">2024</span>
+                  <div className="flex items-center gap-1 text-sm font-medium text-muted-foreground">
+                    <Star className="w-4 h-4 text-primary" />
+                    142
+                  </div>
+                </div>
+                <CardTitle className="mb-1 text-xl">
+                  <Link href="#" className="font-semibold text-foreground hover:text-primary hover:underline" target="_blank">
+                    Gestor de Tareas con IA
+                  </Link>
+                </CardTitle>
+                <CardDescription>Aplicación web para la gestión de tareas con priorización automática.</CardDescription>
               </CardHeader>
-              <CardContent>
-                <Image
-                  src="https://placehold.co/600x400.png"
-                  alt="Project One"
-                  width={600}
-                  height={400}
-                  className="rounded-md object-cover"
-                  data-ai-hint="abstract technology"
-                />
-              </CardContent>
-              <CardFooter className="flex flex-wrap gap-2">
-                <Badge variant="secondary">React</Badge>
-                <Badge variant="secondary">Node.js</Badge>
-                <Badge variant="secondary">AI</Badge>
+              <CardFooter className="pt-4 mt-auto">
+                <div className="flex flex-wrap gap-2">
+                    <Button asChild variant="outline" size="sm">
+                        <Link href="#" target="_blank">Fuente</Link>
+                    </Button>
+                    <Button asChild variant="outline" size="sm">
+                        <Link href="#" target="_blank">Demo</Link>
+                    </Button>
+                </div>
               </CardFooter>
             </Card>
-            <Card className="hover:shadow-lg transition-shadow duration-300">
-              <CardHeader>
-                <CardTitle>Proyecto Dos</CardTitle>
-                <CardDescription className="text-muted-foreground">Plataforma de e-commerce con IA para recomendaciones.</CardDescription>
+            <Card className="flex flex-col h-full transition-colors duration-300 border-2 border-card hover:border-primary">
+              <CardHeader className="flex-grow">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-sm text-muted-foreground">2023</span>
+                  <div className="flex items-center gap-1 text-sm font-medium text-muted-foreground">
+                    <Star className="w-4 h-4 text-primary" />
+                    230
+                  </div>
+                </div>
+                <CardTitle className="mb-1 text-xl">
+                  <Link href="#" className="font-semibold text-foreground hover:text-primary hover:underline" target="_blank">
+                    E-commerce con Recomendaciones
+                  </Link>
+                </CardTitle>
+                <CardDescription>Plataforma de e-commerce con IA para recomendaciones de productos.</CardDescription>
               </CardHeader>
-              <CardContent>
-                <Image
-                  src="https://placehold.co/600x400.png"
-                  alt="Project Two"
-                  width={600}
-                  height={400}
-                  className="rounded-md object-cover"
-                  data-ai-hint="ecommerce shopping"
-                />
-              </CardContent>
-              <CardFooter className="flex flex-wrap gap-2">
-                <Badge variant="secondary">Next.js</Badge>
-                <Badge variant="secondary">Python</Badge>
-                <Badge variant="secondary">ML</Badge>
+              <CardFooter className="pt-4 mt-auto">
+                <div className="flex flex-wrap gap-2">
+                    <Button asChild variant="outline" size="sm">
+                        <Link href="#" target="_blank">Fuente</Link>
+                    </Button>
+                </div>
               </CardFooter>
             </Card>
-            <Card className="hover:shadow-lg transition-shadow duration-300">
-              <CardHeader>
-                <CardTitle>Proyecto Tres</CardTitle>
-                <CardDescription className="text-muted-foreground">Visualizador de datos interactivo para análisis de mercado.</CardDescription>
+            <Card className="flex flex-col h-full transition-colors duration-300 border-2 border-card hover:border-primary">
+              <CardHeader className="flex-grow">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-sm text-muted-foreground">2023</span>
+                  <div className="flex items-center gap-1 text-sm font-medium text-muted-foreground">
+                    <Star className="w-4 h-4 text-primary" />
+                    89
+                  </div>
+                </div>
+                <CardTitle className="mb-1 text-xl">
+                  <Link href="#" className="font-semibold text-foreground hover:text-primary hover:underline" target="_blank">
+                    Visualizador de Datos de Mercado
+                  </Link>
+                </CardTitle>
+                <CardDescription>Herramienta interactiva para el análisis de datos de mercado.</CardDescription>
               </CardHeader>
-              <CardContent>
-                <Image
-                  src="https://placehold.co/600x400.png"
-                  alt="Project Three"
-                  width={600}
-                  height={400}
-                  className="rounded-md object-cover"
-                  data-ai-hint="data charts"
-                />
-              </CardContent>
-              <CardFooter className="flex flex-wrap gap-2">
-                <Badge variant="secondary">D3.js</Badge>
-                <Badge variant="secondary">Firebase</Badge>
+              <CardFooter className="pt-4 mt-auto">
+                <div className="flex flex-wrap gap-2">
+                    <Button asChild variant="outline" size="sm">
+                        <Link href="#" target="_blank">Fuente</Link>
+                    </Button>
+                </div>
+              </CardFooter>
+            </Card>
+             <Card className="flex flex-col h-full transition-colors duration-300 border-2 border-card hover:border-primary">
+              <CardHeader className="flex-grow">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-sm text-muted-foreground">2024</span>
+                  <div className="flex items-center gap-1 text-sm font-medium text-muted-foreground">
+                    <Star className="w-4 h-4 text-primary" />
+                    315
+                  </div>
+                </div>
+                <CardTitle className="mb-1 text-xl">
+                  <Link href="#" className="font-semibold text-foreground hover:text-primary hover:underline">
+                    David.dev (Este Sitio)
+                  </Link>
+                </CardTitle>
+                <CardDescription>El código fuente de este portafolio y blog personal.</CardDescription>
+              </CardHeader>
+              <CardFooter className="pt-4 mt-auto">
+                <div className="flex flex-wrap gap-2">
+                    <Button asChild variant="outline" size="sm">
+                        <Link href="https://github.com/josedavid-pixel/mi-portafolio" target="_blank">Fuente</Link>
+                    </Button>
+                </div>
               </CardFooter>
             </Card>
           </div>
