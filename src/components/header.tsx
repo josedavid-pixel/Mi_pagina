@@ -63,36 +63,46 @@ export function Header() {
               <span className="sr-only">Abrir menú</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right">
-            <SheetHeader>
-              <SheetTitle>Menú</SheetTitle>
+          <SheetContent side="left" className="p-0">
+            <SheetHeader className="sr-only">
+                <SheetTitle>Menú Principal</SheetTitle>
             </SheetHeader>
-            <nav className="grid gap-6 text-lg font-medium mt-10">
-              <Link
-                href="/#about"
-                className="text-muted-foreground hover:text-foreground"
+            <Link
+                href="/"
+                className="flex items-center gap-2 border-b p-4"
+                prefetch={false}
               >
-                Sobre Mí
-              </Link>
-              <Link
-                href="/#projects"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Proyectos
-              </Link>
-              <Link
-                href="/blog"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Blog
-              </Link>
-              <Link
-                href="/#contact"
-                className="text-foreground hover:text-foreground"
-              >
-                Contacto
-              </Link>
-            </nav>
+                <CodeXml className="h-6 w-6 text-primary" />
+                <span className="text-xl font-bold">PersonaPulse</span>
+            </Link>
+            <div className="h-full">
+              <nav className="grid gap-2 p-4 text-base font-medium">
+                <Link
+                  href="/#about"
+                  className="flex items-center rounded-lg px-3 py-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                >
+                  Sobre Mí
+                </Link>
+                <Link
+                  href="/#projects"
+                  className="flex items-center rounded-lg px-3 py-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                >
+                  Proyectos
+                </Link>
+                <Link
+                  href="/blog"
+                  className="flex items-center rounded-lg px-3 py-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                >
+                  Blog
+                </Link>
+                <Link
+                  href="/#contact"
+                  className="flex items-center rounded-lg px-3 py-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                >
+                  Contacto
+                </Link>
+              </nav>
+            </div>
           </SheetContent>
         </Sheet>
       </div>
