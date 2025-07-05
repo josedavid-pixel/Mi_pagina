@@ -36,6 +36,7 @@ export default function Home() {
             height="1000"
             alt="Foto de Jose David en un evento para desarrolladores"
             className="mx-auto aspect-square overflow-hidden rounded-xl object-cover"
+            unoptimized
           />
         </div>
       </section>
