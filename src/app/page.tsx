@@ -49,14 +49,14 @@ export default function Home() {
                   </div>
               </div>
               <div className="mx-auto max-w-3xl py-12 text-center text-muted-foreground space-y-4">
-                  <p>
+                  <p className="text-foreground">
                       Mi viaje en el mundo de la tecnología se impulsa por la constante búsqueda de soluciones innovadoras. Cuento con un sólido dominio de las herramientas de Google, destacando mi experiencia con Firebase, plataforma que utilizo activamente en mis proyectos.
                   </p>
                   <p>
                       Una de mis experiencias más enriquecedoras fue participar en la hackathon "Build with IA", organizada por GDG Santa Cruz. Fue una oportunidad increíble para poner a prueba mis habilidades, colaborar en un entorno desafiante y explorar el potencial de la inteligencia artificial en aplicaciones prácticas. Actualmente, además de mis proyectos personales, colaboro en iniciativas de software en la Universidad Autónoma Gabriel René Moreno (UAGRM) y he estado involucrado en el desarrollo de soluciones tecnológicas para el sector agroindustrial.
                   </p>
                   <p>
-                      Mi objetivo es seguir aprendiendo, creando y contribuyendo al desarrollo de software que genere un impacto positivo, siempre explorando las fronteras de la inteligencia artificial y las tecnologías emergentes.
+                      Mi objetivo es seguir aprendiendo, creando y contribuyendo al desarrollo de software que genere un impacto positivo, siempre explorando las fronteras de la inteligencia artificial y las tecnologías emergentes.\n
                   </p>
               </div>
           </div>
@@ -77,7 +77,7 @@ export default function Home() {
             <Card className="hover:shadow-lg transition-shadow duration-300">
               <CardHeader>
                 <CardTitle>Proyecto Uno</CardTitle>
-                <CardDescription>Una aplicación web para la gestión de tareas.</CardDescription>
+                <CardDescription className="text-muted-foreground">Una aplicación web para la gestión de tareas.</CardDescription>
               </CardHeader>
               <CardContent>
                 <Image
@@ -98,7 +98,7 @@ export default function Home() {
             <Card className="hover:shadow-lg transition-shadow duration-300">
               <CardHeader>
                 <CardTitle>Proyecto Dos</CardTitle>
-                <CardDescription>Plataforma de e-commerce con IA para recomendaciones.</CardDescription>
+                <CardDescription className="text-muted-foreground">Plataforma de e-commerce con IA para recomendaciones.</CardDescription>
               </CardHeader>
               <CardContent>
                 <Image
@@ -119,7 +119,7 @@ export default function Home() {
             <Card className="hover:shadow-lg transition-shadow duration-300">
               <CardHeader>
                 <CardTitle>Proyecto Tres</CardTitle>
-                <CardDescription>Visualizador de datos interactivo para análisis de mercado.</CardDescription>
+                <CardDescription className="text-muted-foreground">Visualizador de datos interactivo para análisis de mercado.</CardDescription>
               </CardHeader>
               <CardContent>
                 <Image

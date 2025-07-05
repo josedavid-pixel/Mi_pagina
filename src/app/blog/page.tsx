@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight } from 'lucide-react';
 
@@ -12,7 +12,7 @@ export default function BlogPage() {
       <section className="w-full py-12 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center">
-            <h1 className="text-3xl font-bold tracking-tighter text-primary sm:text-5xl">
+            <h1 className="text-3xl font-bold tracking-tighter text-foreground sm:text-5xl">
               Artículos Recientes
             </h1>
             <p className="max-w-[700px] text-muted-foreground md:text-xl">
@@ -23,7 +23,7 @@ export default function BlogPage() {
       </section>
 
       <div className="container mx-auto px-4 md:px-6 pb-12">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
             <Link href={`/blog/${post.slug}`} key={post.slug} className="group block">
               <Card className="flex h-full flex-col overflow-hidden rounded-lg border-2 border-transparent transition-all duration-300 hover:border-primary hover:shadow-2xl">
