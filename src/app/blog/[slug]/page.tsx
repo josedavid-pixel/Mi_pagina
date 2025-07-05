@@ -6,14 +6,31 @@ import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
 import { ChevronLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { remark } from 'remark';
+import html from 'remark-html';
+import type { Metadata } from 'next';
 
 // In a real app, you would fetch this data from a CMS or database.
 const getPostData = (slug: string) => {
     return posts.find(p => p.slug === slug);
 }
 
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+    const post = getPostData(params.slug);
 
-export default function BlogPostPage({ params }: { params: { slug:string } }) {
+    if (!post) {
+        return {
+            title: 'Post no encontrado',
+        }
+    }
+
+    return {
+        title: `${post.title} | PersonaPulse`,
+        description: post.description,
+    }
+}
+
+export default async function BlogPostPage({ params }: { params: { slug:string } }) {
     const post = getPostData(params.slug);
 
     if (!post) {
@@ -27,6 +44,12 @@ export default function BlogPostPage({ params }: { params: { slug:string } }) {
     
     const postDate = new Date(post.date);
     const formattedDate = format(postDate, "d 'de' MMMM, yyyy", { locale: es });
+    
+    const processedContent = await remark()
+        .use(html)
+        .process(post.content);
+    const contentHtml = processedContent.toString();
+
 
     return (
         <article className="container max-w-3xl py-12 mx-auto">
@@ -59,7 +82,7 @@ export default function BlogPostPage({ params }: { params: { slug:string } }) {
 
             <div 
                 className="prose prose-lg dark:prose-invert max-w-none"
-                dangerouslySetInnerHTML={{ __html: post.content }} 
+                dangerouslySetInnerHTML={{ __html: contentHtml }} 
             />
         </article>
     );

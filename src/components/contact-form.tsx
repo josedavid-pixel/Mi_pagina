@@ -1,6 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -9,45 +11,55 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { db } from "@/lib/firebase"; 
 import { collection, addDoc } from 'firebase/firestore'; 
 import { useToast } from "@/hooks/use-toast";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form"
+
+const formSchema = z.object({
+  name: z.string().min(2, {
+    message: "El nombre debe tener al menos 2 caracteres.",
+  }),
+  email: z.string().email({
+    message: "Por favor, introduce una dirección de correo electrónico válida.",
+  }),
+  phone: z.string().optional(),
+  message: z.string().min(10, {
+    message: "El mensaje debe tener al menos 10 caracteres.",
+  }),
+});
+
 
 function ContactForm() {
- const { toast } = useToast();
- const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
+  const { toast } = useToast();
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    },
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { id, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [id]: value
-    }));
-  };
+  const { isSubmitting } = form.formState;
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
       await addDoc(collection(db, "mensajesContactos"), {
-        nombre: formData.name,
-        email: formData.email,
-        celular: formData.phone,
-        mensaje: formData.message,
+        nombre: values.name,
+        email: values.email,
+        celular: values.phone,
+        mensaje: values.message,
         estado: 'nuevo', 
         timestamp: new Date()
       });
 
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        message: ''
-      });
+      form.reset();
       toast({
         title: "Mensaje Enviado",
         description: "Gracias por contactarme. Te responderé pronto.",
@@ -59,74 +71,79 @@ function ContactForm() {
         title: "Error al enviar",
         description: "Hubo un problema al enviar tu mensaje. Por favor, intenta de nuevo.",
       });
-    } finally {
-      setIsSubmitting(false);
     }
   };
 
   return (
     <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
-        <Card className="w-full max-w-2xl mx-auto">
+      <Card className="w-full max-w-2xl mx-auto">
         <CardHeader className="text-center">
             <CardTitle className="text-3xl font-bold tracking-tighter sm:text-4xl text-primary">Contáctame</CardTitle>
         </CardHeader>
         <CardContent>
-            <form onSubmit={handleSubmit} className="grid gap-6">
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                <div className="grid gap-2">
-                <Label htmlFor="name">Nombre</Label>
-    <Input
-                    id="name"
-                    type="text"
-                    placeholder="Tu Nombre"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    disabled={isSubmitting}
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-6">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Nombre</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Tu Nombre" {...field} disabled={isSubmitting} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-                </div>
-                <div className="grid gap-2">
-                <Label htmlFor="email">Email</Label>
-    <Input
-                    id="email"
-                    type="email"
-                    placeholder="tu@email.com"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    disabled={isSubmitting}
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Email</FormLabel>
+                      <FormControl>
+                        <Input placeholder="tu@email.com" {...field} disabled={isSubmitting} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-                </div>
-            </div>
-            <div className="grid gap-2">
-                <Label htmlFor="phone">Número de Teléfono (Opcional)</Label>
-    <Input
-                id="phone"
-                type="tel"
-                placeholder="Ej: +591 71234567"
-                value={formData.phone}
-                onChange={handleChange}
-                disabled={isSubmitting}
-                />
-            </div>
-            <div className="grid gap-2">
-                <Label htmlFor="message">Mensaje</Label>
-    <Textarea
-                id="message"
-                placeholder="Tu mensaje..."
-                value={formData.message}
-                onChange={handleChange}
-                required
-                className="min-h-[120px]"
-                disabled={isSubmitting}
-                />
-            </div>
-            <Button type="submit" className="w-full" disabled={isSubmitting}>
+              </div>
+              <FormField
+                control={form.control}
+                name="phone"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Número de Teléfono (Opcional)</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Ej: +591 71234567" {...field} disabled={isSubmitting} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Mensaje</FormLabel>
+                    <FormControl>
+                      <Textarea placeholder="Tu mensaje..." className="min-h-[120px]" {...field} disabled={isSubmitting} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <Button type="submit" className="w-full" disabled={isSubmitting}>
                 {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
-            </Button>
+              </Button>
             </form>
+          </Form>
         </CardContent>
-        </Card>
+      </Card>
     </section>
   );
 }
