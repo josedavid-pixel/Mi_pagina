@@ -31,7 +31,7 @@ export default function Home() {
             </div>
           </div>
           <Image
-            src="/jose.jpg"
+            src="https://placehold.co/1000x1000.png"
             width="1000"
             height="1000"
             alt="Foto de Jose David en un evento para desarrolladores"
