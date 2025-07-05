@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-2">
             <CodeXml className="h-6 w-6 text-primary" />
-            <span className="text-lg font-bold text-foreground">PersonaPulse</span>
+            <span className="text-lg font-bold text-foreground">David.dev</span>
           </div>
           <div className="flex space-x-2">
             <Link href="https://www.linkedin.com/in/jose-david-borja-vasquez-a58a17307?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">

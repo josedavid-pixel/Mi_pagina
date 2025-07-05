@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "PersonaPulse | Portafolio y Blog",
+  title: "David.dev | Portafolio y Blog",
   description: "Un portafolio y blog personal para compartir contenido diverso sobre tecnología y IA.",
 };
 
@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className="font-body antialiased">
         <ThemeProvider
           defaultTheme="dark"
-          storageKey="personapulse-theme"
+          storageKey="daviddev-theme"
         >
           <div className="relative flex min-h-screen w-full flex-col">
             <Header />

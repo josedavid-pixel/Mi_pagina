@@ -34,7 +34,7 @@ export function Header() {
         prefetch={false}
       >
         <CodeXml className="h-6 w-6 text-primary" />
-        <span className="text-xl font-bold">PersonaPulse</span>
+        <span className="text-xl font-bold">David.dev</span>
       </Link>
 
       {/* Desktop Navigation */}
@@ -94,7 +94,7 @@ export function Header() {
                         onClick={(e) => handleMobileLinkClick(e, "/")}
                       >
                         <CodeXml className="h-6 w-6 text-primary" />
-                        <span className="text-xl font-bold">PersonaPulse</span>
+                        <span className="text-xl font-bold">David.dev</span>
                     </Link>
                 </SheetTitle>
             </SheetHeader>
