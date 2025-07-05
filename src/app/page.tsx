@@ -5,9 +5,16 @@ import ContactForm from "@/components/contact-form";
 import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Star } from "lucide-react";
+import { Star, Atom, GitBranch, Github, Flame, Code, CodeXml, Palette, Wind } from "lucide-react";
 
 export default function Home() {
+
+  const TechIconWrapper = ({ children }: { children: React.ReactNode }) => (
+    <div className="w-16 h-16 flex items-center justify-center rounded-lg bg-muted text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
+      {children}
+    </div>
+  );
+
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
@@ -65,9 +72,81 @@ export default function Home() {
               </div>
           </div>
       </section>
+      
+      {/* Skills Section */}
+      <section id="skills" className="w-full py-12 md:py-24 lg:py-32 bg-background">
+        <div className="container px-4 md:px-6">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+            <div className="space-y-2">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-primary">Herramientas y Tecnologías</h2>
+              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
+                Estas son algunas de las tecnologías y herramientas que uso para dar vida a mis proyectos.
+              </p>
+            </div>
+          </div>
+          <div className="mx-auto grid grid-cols-2 gap-y-10 gap-x-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 justify-items-center">
+            
+            <div className="flex flex-col items-center justify-center gap-2 text-center group">
+              <TechIconWrapper><span className="text-3xl font-bold">N</span></TechIconWrapper>
+              <span className="text-sm font-medium">Next.js</span>
+            </div>
+
+            <div className="flex flex-col items-center justify-center gap-2 text-center group">
+              <TechIconWrapper><Atom className="w-10 h-10" /></TechIconWrapper>
+              <span className="text-sm font-medium">React</span>
+            </div>
+            
+            <div className="flex flex-col items-center justify-center gap-2 text-center group">
+              <TechIconWrapper><span className="text-2xl font-bold">TS</span></TechIconWrapper>
+              <span className="text-sm font-medium">TypeScript</span>
+            </div>
+
+            <div className="flex flex-col items-center justify-center gap-2 text-center group">
+              <TechIconWrapper><span className="text-2xl font-bold">JS</span></TechIconWrapper>
+              <span className="text-sm font-medium">JavaScript</span>
+            </div>
+
+            <div className="flex flex-col items-center justify-center gap-2 text-center group">
+              <TechIconWrapper><Wind className="w-10 h-10" /></TechIconWrapper>
+              <span className="text-sm font-medium">Tailwind CSS</span>
+            </div>
+
+            <div className="flex flex-col items-center justify-center gap-2 text-center group">
+              <TechIconWrapper><Flame className="w-10 h-10" /></TechIconWrapper>
+              <span className="text-sm font-medium">Firebase</span>
+            </div>
+
+            <div className="flex flex-col items-center justify-center gap-2 text-center group">
+              <TechIconWrapper><CodeXml className="w-10 h-10" /></TechIconWrapper>
+              <span className="text-sm font-medium">HTML5</span>
+            </div>
+
+            <div className="flex flex-col items-center justify-center gap-2 text-center group">
+              <TechIconWrapper><Palette className="w-10 h-10" /></TechIconWrapper>
+              <span className="text-sm font-medium">CSS3</span>
+            </div>
+
+            <div className="flex flex-col items-center justify-center gap-2 text-center group">
+              <TechIconWrapper><GitBranch className="w-10 h-10" /></TechIconWrapper>
+              <span className="text-sm font-medium">Git</span>
+            </div>
+
+            <div className="flex flex-col items-center justify-center gap-2 text-center group">
+              <TechIconWrapper><Github className="w-10 h-10" /></TechIconWrapper>
+              <span className="text-sm font-medium">GitHub</span>
+            </div>
+
+            <div className="flex flex-col items-center justify-center gap-2 text-center group">
+              <TechIconWrapper><Code className="w-10 h-10" /></TechIconWrapper>
+              <span className="text-sm font-medium">VS Code</span>
+            </div>
+            
+          </div>
+        </div>
+      </section>
 
       {/* Projects Section */}
-      <section id="projects" className="w-full py-12 md:py-24 lg:py-32 bg-background">
+      <section id="projects" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
