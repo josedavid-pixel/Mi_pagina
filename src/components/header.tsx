@@ -4,7 +4,7 @@ import Link from "next/link";
 import { CodeXml, Menu } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import { useState } from "react";
 
 export function Header() {
@@ -72,45 +72,50 @@ export function Header() {
             <SheetHeader className="sr-only">
                 <SheetTitle>Menú Principal</SheetTitle>
             </SheetHeader>
-            <Link
-                href="/"
-                className="flex items-center gap-2 border-b p-4"
-                prefetch={false}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                <CodeXml className="h-6 w-6 text-primary" />
-                <span className="text-xl font-bold">PersonaPulse</span>
-            </Link>
+            <SheetClose asChild>
+                <Link
+                    href="/"
+                    className="flex items-center gap-2 border-b p-4"
+                    prefetch={false}
+                  >
+                    <CodeXml className="h-6 w-6 text-primary" />
+                    <span className="text-xl font-bold">PersonaPulse</span>
+                </Link>
+            </SheetClose>
             <div className="h-full">
               <nav className="grid gap-2 p-4 text-base font-medium">
-                <Link
-                  href="/#about"
-                  className="flex items-center rounded-lg px-3 py-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Sobre Mí
-                </Link>
-                <Link
-                  href="/#projects"
-                  className="flex items-center rounded-lg px-3 py-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Proyectos
-                </Link>
-                <Link
-                  href="/blog"
-                  className="flex items-center rounded-lg px-3 py-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Blog
-                </Link>
-                <Link
-                  href="/#contact"
-                  className="flex items-center rounded-lg px-3 py-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Contacto
-                </Link>
+                <SheetClose asChild>
+                  <Link
+                    href="/#about"
+                    className="flex items-center rounded-lg px-3 py-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                  >
+                    Sobre Mí
+                  </Link>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Link
+                    href="/#projects"
+                    className="flex items-center rounded-lg px-3 py-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                  >
+                    Proyectos
+                  </Link>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Link
+                    href="/blog"
+                    className="flex items-center rounded-lg px-3 py-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                  >
+                    Blog
+                  </Link>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Link
+                    href="/#contact"
+                    className="flex items-center rounded-lg px-3 py-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                  >
+                    Contacto
+                  </Link>
+                </SheetClose>
               </nav>
             </div>
           </SheetContent>
