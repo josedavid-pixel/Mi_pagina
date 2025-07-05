@@ -1,10 +1,15 @@
+'use client';
+
 import Link from "next/link";
 import { CodeXml, Menu } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { useState } from "react";
 
 export function Header() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <header className="px-4 lg:px-6 h-16 flex items-center bg-card/80 backdrop-blur-sm border-b sticky top-0 z-50">
       <Link
@@ -56,7 +61,7 @@ export function Header() {
       {/* Mobile Navigation */}
       <div className="ml-auto flex items-center gap-2 md:hidden">
         <ThemeToggle />
-        <Sheet>
+        <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
           <SheetTrigger asChild>
             <Button variant="ghost" size="icon">
               <Menu className="h-6 w-6" />
@@ -71,6 +76,7 @@ export function Header() {
                 href="/"
                 className="flex items-center gap-2 border-b p-4"
                 prefetch={false}
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 <CodeXml className="h-6 w-6 text-primary" />
                 <span className="text-xl font-bold">PersonaPulse</span>
@@ -80,24 +86,28 @@ export function Header() {
                 <Link
                   href="/#about"
                   className="flex items-center rounded-lg px-3 py-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Sobre Mí
                 </Link>
                 <Link
                   href="/#projects"
                   className="flex items-center rounded-lg px-3 py-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Proyectos
                 </Link>
                 <Link
                   href="/blog"
                   className="flex items-center rounded-lg px-3 py-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Blog
                 </Link>
                 <Link
                   href="/#contact"
                   className="flex items-center rounded-lg px-3 py-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Contacto
                 </Link>
