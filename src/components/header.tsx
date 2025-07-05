@@ -1,6 +1,7 @@
 'use client';
 
 import Link from "next/link";
+import { useRouter } from 'next/navigation';
 import { CodeXml, Menu } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
@@ -9,6 +10,21 @@ import { useState } from "react";
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const router = useRouter();
+
+  // Handles click on mobile nav links to prevent animation conflicts.
+  const handleMobileLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault(); // Prevent instant navigation
+    setIsMobileMenuOpen(false); // Trigger the sheet to close
+
+    // Wait for the closing animation to finish before navigating
+    setTimeout(() => {
+      router.push(href);
+    }, 300); // 300ms is a common animation duration
+  };
 
   return (
     <header className="px-4 lg:px-6 h-16 flex items-center bg-card/80 backdrop-blur-sm border-b sticky top-0 z-50">
@@ -69,45 +85,46 @@ export function Header() {
             </Button>
           </SheetTrigger>
           <SheetContent side="left" className="p-0">
-            <SheetHeader className="sr-only">
-                <SheetTitle>Menú Principal</SheetTitle>
+            <SheetHeader className="border-b p-4">
+                <SheetTitle>
+                    <Link
+                        href="/"
+                        className="flex items-center gap-2"
+                        prefetch={false}
+                        onClick={(e) => handleMobileLinkClick(e, "/")}
+                      >
+                        <CodeXml className="h-6 w-6 text-primary" />
+                        <span className="text-xl font-bold">PersonaPulse</span>
+                    </Link>
+                </SheetTitle>
             </SheetHeader>
-            <Link
-                href="/"
-                className="flex items-center gap-2 border-b p-4"
-                prefetch={false}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                <CodeXml className="h-6 w-6 text-primary" />
-                <span className="text-xl font-bold">PersonaPulse</span>
-            </Link>
             <div className="h-full">
               <nav className="grid gap-2 p-4 text-base font-medium">
                   <Link
                     href="/#about"
                     className="flex items-center rounded-lg px-3 py-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={(e) => handleMobileLinkClick(e, "/#about")}
                   >
                     Sobre Mí
                   </Link>
                   <Link
                     href="/#projects"
                     className="flex items-center rounded-lg px-3 py-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={(e) => handleMobileLinkClick(e, "/#projects")}
                   >
                     Proyectos
                   </Link>
                   <Link
                     href="/blog"
                     className="flex items-center rounded-lg px-3 py-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={(e) => handleMobileLinkClick(e, "/blog")}
                   >
                     Blog
                   </Link>
                   <Link
                     href="/#contact"
                     className="flex items-center rounded-lg px-3 py-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={(e) => handleMobileLinkClick(e, "/#contact")}
                   >
                     Contacto
                   </Link>
