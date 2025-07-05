@@ -31,12 +31,11 @@ export default function Home() {
             </div>
           </div>
           <Image
-            src="https://placehold.co/1000x1000.png"
+            src="/jose.jpg"
             width="1000"
             height="1000"
             alt="Foto de Jose David en un evento para desarrolladores"
             className="mx-auto aspect-square overflow-hidden rounded-xl object-cover"
-            data-ai-hint="man portrait"
           />
         </div>
       </section>
