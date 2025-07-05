@@ -3,13 +3,14 @@ import Image from 'next/image';
 import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight } from 'lucide-react';
-
 import { posts } from '@/lib/blogPosts';
+import BlogTopicGenerator from '@/components/blog-topic-generator';
 
 export default function BlogPage() {
   return (
     <div className="bg-background">
-      <section className="w-full py-12 md:py-24 lg:py-32">
+      <BlogTopicGenerator />
+      <section className="w-full pt-12 pb-12 md:pb-24 lg:pb-32">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center">
             <h1 className="text-3xl font-bold tracking-tighter text-foreground sm:text-5xl">
