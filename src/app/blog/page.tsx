@@ -57,7 +57,7 @@ export default function BlogPage() {
           </div>
         ) : (
           <div className="text-center py-12">
-            <p className="text-muted-foreground">Aún no he publicado ningún artículo, ¡pero estoy trabajando en nuevas ideas!</p>
+            <p className="text-muted-foreground">Pronto subiré nuevos artículos al blog. ¡Estén atentos!</p>
           </div>
         )}
       </div>
