@@ -189,12 +189,12 @@ export default function Home() {
               </div>
               <div className="flex justify-center">
                   <Image
-                      src="/jose.jpg"
+                      src="https://placehold.co/450x450.png"
                       width="450"
                       height="450"
                       alt="Foto de Jose David en un evento para desarrolladores"
                       className="mx-auto aspect-square overflow-hidden rounded-xl object-cover"
-                      unoptimized={true}
+                      data-ai-hint="man portrait"
                   />
               </div>
           </div>

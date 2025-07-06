@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { CodeXml, Menu } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { useState } from "react";
 
 export function Header() {
@@ -97,6 +97,7 @@ export function Header() {
                         <span className="text-xl font-bold">David.dev</span>
                     </Link>
                 </SheetTitle>
+                <SheetDescription className="sr-only">Menú de navegación principal</SheetDescription>
             </SheetHeader>
             <div className="h-full">
               <nav className="grid gap-2 p-4 text-base font-medium">
