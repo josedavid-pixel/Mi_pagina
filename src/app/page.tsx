@@ -79,6 +79,12 @@ export default function Home() {
     ],
     tools: [
       {
+        name: 'Firebase',
+        icon: <Flame className="w-10 h-10" />,
+        description: "Una plataforma de desarrollo de aplicaciones de Google que ayuda a crear, mejorar y hacer crecer apps. Ofrece una amplia gama de herramientas y servicios como bases de datos, autenticación, hosting y más.",
+        url: 'https://firebase.google.com/'
+      },
+      {
         name: 'Git',
         icon: <GitBranch className="w-10 h-10" />,
         description: "Un sistema de control de versiones distribuido, diseñado para manejar todo, desde proyectos pequeños hasta muy grandes, con velocidad y eficiencia. Es fundamental para el desarrollo de software colaborativo.",
@@ -224,7 +230,7 @@ export default function Home() {
 
             <div>
               <h3 className="text-2xl font-bold tracking-tight text-center mb-6">Herramientas de Desarrollo</h3>
-              <div className="mx-auto grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-3 justify-items-center max-w-lg">
+              <div className="mx-auto grid grid-cols-2 gap-4 sm:grid-cols-4 md:grid-cols-4 justify-items-center max-w-2xl">
                 {technologies.tools.map(tech => <TechCard key={tech.name} tech={tech} />)}
               </div>
             </div>
