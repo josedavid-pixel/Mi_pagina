@@ -105,27 +105,6 @@ const technologies = {
       }
     ]
   };
-
-const projects = [
-    {
-        title: 'Asistente de Jardinería con IA',
-        description: 'Una aplicación web que utiliza IA para diagnosticar problemas en plantas a partir de una foto. Los usuarios pueden obtener consejos sobre el cuidado y la salud de sus plantas.',
-        image: 'https://placehold.co/600x400.png',
-        aiHint: 'gardening app',
-        tags: ['Next.js', 'Genkit', 'Firestore', 'Tailwind CSS'],
-        githubUrl: '#',
-        liveUrl: '#'
-    },
-    {
-        title: 'Plataforma de E-learning',
-        description: 'Un sitio web de cursos en línea con autenticación de usuarios, perfiles, y un sistema para consumir contenido de video. Construido con un enfoque en la experiencia de usuario.',
-        image: 'https://placehold.co/600x400.png',
-        aiHint: 'online course',
-        tags: ['React', 'Firebase Auth', 'Node.js', 'Stripe'],
-        githubUrl: '#',
-        liveUrl: '#'
-    }
-];
   
 const TechCard = ({ tech }: { tech: typeof technologies.languages[0] }) => (
     <Dialog>
@@ -200,12 +179,12 @@ export default function Home() {
               </div>
               <div className="flex justify-center">
                   <Image
-                      src="/jose.png"
+                      src="https://placehold.co/450x450.png"
                       width="450"
                       height="450"
                       alt="Foto de Jose David"
                       className="mx-auto aspect-square overflow-hidden rounded-xl object-cover"
-                      unoptimized
+                      data-ai-hint="man portrait"
                   />
               </div>
           </div>
@@ -267,41 +246,8 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projects.map((project) => (
-                <Card key={project.title} className="flex flex-col">
-                    <CardHeader>
-                        <div className="relative w-full mb-4 overflow-hidden aspect-video rounded-lg">
-                            <Image 
-                                src={project.image} 
-                                alt={project.title} 
-                                fill 
-                                className="object-cover"
-                                data-ai-hint={project.aiHint} 
-                            />
-                        </div>
-                        <CardTitle className="text-xl font-bold text-primary">{project.title}</CardTitle>
-                        <div className="flex flex-wrap gap-2 pt-2">
-                            {project.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
-                        </div>
-                    </CardHeader>
-                    <CardContent>
-                        <p className="text-muted-foreground">{project.description}</p>
-                    </CardContent>
-                    <CardFooter className="mt-auto flex gap-2">
-                        <Button asChild variant="outline">
-                            <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                                <Github className="mr-2 h-4 w-4" /> Código
-                            </Link>
-                        </Button>
-                        <Button asChild>
-                            <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                                <ExternalLink className="mr-2 h-4 w-4" /> Demo
-                            </Link>
-                        </Button>
-                    </CardFooter>
-                </Card>
-            ))}
+          <div className="text-center py-12">
+            <p className="text-muted-foreground">Pronto subiré mis proyectos.</p>
           </div>
         </div>
       </section>
