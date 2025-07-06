@@ -153,18 +153,6 @@ export default function Home() {
                 Apasionado por crear soluciones innovadoras que combinan el desarrollo de software y el poder de la inteligencia artificial.
               </p>
             </div>
-            <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Button asChild size="lg">
-                <Link href="/#projects">
-                  Ver Proyectos
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="secondary">
-                <Link href="/#contact">
-                  Contacto
-                </Link>
-              </Button>
-            </div>
           </div>
         </div>
       </section>
@@ -189,12 +177,11 @@ export default function Home() {
               </div>
               <div className="flex justify-center">
                   <Image
-                      src="https://placehold.co/450x450.png"
+                      src="/jose.jpg"
                       width="450"
                       height="450"
                       alt="Foto de Jose David en un evento para desarrolladores"
                       className="mx-auto aspect-square overflow-hidden rounded-xl object-cover"
-                      data-ai-hint="man portrait"
                   />
               </div>
           </div>
