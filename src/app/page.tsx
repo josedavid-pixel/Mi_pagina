@@ -1,3 +1,4 @@
+'use client'
 
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
@@ -9,130 +10,130 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 import { Star, Atom, GitBranch, Github, Flame, Code, CodeXml, Palette, Wind, ArrowRight, Database, Server, KeyRound } from "lucide-react";
 
 const technologies = {
-  languages: [
-    {
-      name: 'TypeScript',
-      icon: <span className="text-2xl font-bold">TS</span>,
-      description: "Un superconjunto de JavaScript que añade tipado estático opcional. Se usa para construir aplicaciones grandes y robustas, ya que ayuda a prevenir errores comunes y mejora la legibilidad del código.",
-      url: 'https://www.typescriptlang.org/'
-    },
-    {
-      name: 'JavaScript',
-      icon: <span className="text-2xl font-bold">JS</span>,
-      description: "El lenguaje de programación fundamental de la web. Se utiliza para crear interactividad en las páginas web, desde animaciones simples hasta aplicaciones complejas del lado del cliente y del servidor (con Node.js).",
-      url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'
-    },
-    {
-      name: 'HTML5',
-      icon: <CodeXml className="w-10 h-10" />,
-      description: "El lenguaje de marcado estándar para crear y estructurar el contenido de las páginas web. Define elementos como párrafos, encabezados, imágenes y formularios.",
-      url: 'https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5'
-    },
-    {
-      name: 'CSS3',
-      icon: <Palette className="w-10 h-10" />,
-      description: "El lenguaje de hojas de estilo utilizado para describir la presentación y el diseño de un documento escrito en HTML. Controla colores, fuentes, espaciado y diseño responsivo.",
-      url: 'https://developer.mozilla.org/en-US/docs/Web/CSS'
-    }
-  ],
-  frameworks: [
-    {
-      name: 'Next.js',
-      icon: <span className="text-3xl font-bold">N</span>,
-      description: "Un framework de React para construir aplicaciones web de producción. Ofrece renderizado del lado del servidor (SSR), generación de sitios estáticos (SSG), enrutamiento basado en archivos y optimización de rendimiento.",
-      url: 'https://nextjs.org/'
-    },
-    {
-      name: 'React',
-      icon: <Atom className="w-10 h-10" />,
-      description: "Una biblioteca de JavaScript para construir interfaces de usuario interactivas y reutilizables. Permite desarrollar aplicaciones de una sola página (SPA) de manera eficiente mediante un modelo de componentes.",
-      url: 'https://react.dev/'
-    },
-    {
-      name: 'Tailwind CSS',
-      icon: <Wind className="w-10 h-10" />,
-      description: "Un framework de CSS 'utility-first' para crear rápidamente diseños personalizados sin salir de tu HTML. Proporciona clases de bajo nivel que se pueden combinar para construir cualquier diseño.",
-      url: 'https://tailwindcss.com/'
-    }
-  ],
-  firebase: [
+    languages: [
       {
-        name: 'Firestore',
-        icon: <Database className="w-9 h-9" />,
-        description: "Una base de datos NoSQL, flexible y escalable para el desarrollo móvil, web y de servidores. Permite almacenar y sincronizar datos en tiempo real entre clientes.",
-        url: 'https://firebase.google.com/docs/firestore'
+        name: 'TypeScript',
+        icon: <span className="text-2xl font-bold">TS</span>,
+        description: "Un superconjunto de JavaScript que añade tipado estático opcional. Se usa para construir aplicaciones grandes y robustas, ya que ayuda a prevenir errores comunes y mejora la legibilidad del código.",
+        url: 'https://www.typescriptlang.org/'
       },
       {
-        name: 'Hosting',
-        icon: <Server className="w-9 h-9" />,
-        description: "Un servicio de alojamiento web rápido y seguro para aplicaciones web estáticas y dinámicas, así como para microservicios. Ofrece CDN global, SSL automático y despliegues sencillos.",
-        url: 'https://firebase.google.com/docs/hosting'
+        name: 'JavaScript',
+        icon: <span className="text-2xl font-bold">JS</span>,
+        description: "El lenguaje de programación fundamental de la web. Se utiliza para crear interactividad en las páginas web, desde animaciones simples hasta aplicaciones complejas del lado del cliente y del servidor (con Node.js).",
+        url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'
       },
       {
-        name: 'Authentication',
-        icon: <KeyRound className="w-9 h-9" />,
-        description: "Proporciona servicios de backend fáciles de usar, SDK seguros y bibliotecas de UI listas para usar para autenticar a los usuarios en tu aplicación. Admite proveedores de identidad como correo electrónico, redes sociales y más.",
-        url: 'https://firebase.google.com/docs/auth'
+        name: 'HTML5',
+        icon: <CodeXml className="w-10 h-10" />,
+        description: "El lenguaje de marcado estándar para crear y estructurar el contenido de las páginas web. Define elementos como párrafos, encabezados, imágenes y formularios.",
+        url: 'https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5'
+      },
+      {
+        name: 'CSS3',
+        icon: <Palette className="w-10 h-10" />,
+        description: "El lenguaje de hojas de estilo utilizado para describir la presentación y el diseño de un documento escrito en HTML. Controla colores, fuentes, espaciado y diseño responsivo.",
+        url: 'https://developer.mozilla.org/en-US/docs/Web/CSS'
       }
-  ],
-  tools: [
-    {
-      name: 'Firebase',
-      icon: <Flame className="w-10 h-10" />,
-      description: "Una plataforma de desarrollo de aplicaciones de Google que ayuda a crear, mejorar y hacer crecer apps. Ofrece una amplia gama de herramientas y servicios como bases de datos, autenticación, hosting y más.",
-      url: 'https://firebase.google.com/'
-    },
-    {
-      name: 'Git',
-      icon: <GitBranch className="w-10 h-10" />,
-      description: "Un sistema de control de versiones distribuido, diseñado para manejar todo, desde proyectos pequeños hasta muy grandes, con velocidad y eficiencia. Es fundamental para el desarrollo de software colaborativo.",
-      url: 'https://git-scm.com/'
-    },
-    {
-      name: 'GitHub',
-      icon: <Github className="w-10 h-10" />,
-      description: "Una plataforma de alojamiento para el control de versiones con Git. Se utiliza para almacenar, gestionar y colaborar en proyectos de software. Incluye herramientas para seguimiento de problemas, integración continua y más.",
-      url: 'https://github.com/'
-    },
-    {
-      name: 'VS Code',
-      icon: <Code className="w-10 h-10" />,
-      description: "Un editor de código fuente ligero pero potente que se ejecuta en el escritorio. Viene con soporte integrado para JavaScript, TypeScript y Node.js, y un rico ecosistema de extensiones para otros lenguajes y herramientas.",
-      url: 'https://code.visualstudio.com/'
-    }
-  ]
-};
-
-const TechCard = ({ tech }: { tech: typeof technologies.languages[0] }) => (
-  <Dialog>
-    <DialogTrigger asChild>
-      <button className="flex w-full flex-col items-center justify-start gap-2 text-center group p-4 rounded-lg transition-all duration-300 hover:bg-secondary">
-        <div className="w-16 h-16 flex items-center justify-center rounded-lg bg-muted text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
-          {tech.icon}
-        </div>
-        <span className="text-sm font-medium">{tech.name}</span>
-      </button>
-    </DialogTrigger>
-    <DialogContent className="sm:max-w-[425px]">
-      <DialogHeader>
-        <DialogTitle className="text-2xl text-primary flex items-center gap-4">
-          <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-muted text-primary shrink-0">
+    ],
+    frameworks: [
+      {
+        name: 'Next.js',
+        icon: <span className="text-3xl font-bold">N</span>,
+        description: "Un framework de React para construir aplicaciones web de producción. Ofrece renderizado del lado del servidor (SSR), generación de sitios estáticos (SSG), enrutamiento basado en archivos y optimización de rendimiento.",
+        url: 'https://nextjs.org/'
+      },
+      {
+        name: 'React',
+        icon: <Atom className="w-10 h-10" />,
+        description: "Una biblioteca de JavaScript para construir interfaces de usuario interactivas y reutilizables. Permite desarrollar aplicaciones de una sola página (SPA) de manera eficiente mediante un modelo de componentes.",
+        url: 'https://react.dev/'
+      },
+      {
+        name: 'Tailwind CSS',
+        icon: <Wind className="w-10 h-10" />,
+        description: "Un framework de CSS 'utility-first' para crear rápidamente diseños personalizados sin salir de tu HTML. Proporciona clases de bajo nivel que se pueden combinar para construir cualquier diseño.",
+        url: 'https://tailwindcss.com/'
+      }
+    ],
+    firebase: [
+        {
+          name: 'Firestore',
+          icon: <Database className="w-9 h-9" />,
+          description: "Una base de datos NoSQL, flexible y escalable para el desarrollo móvil, web y de servidores. Permite almacenar y sincronizar datos en tiempo real entre clientes.",
+          url: 'https://firebase.google.com/docs/firestore'
+        },
+        {
+          name: 'Hosting',
+          icon: <Server className="w-9 h-9" />,
+          description: "Un servicio de alojamiento web rápido y seguro para aplicaciones web estáticas y dinámicas, así como para microservicios. Ofrece CDN global, SSL automático y despliegues sencillos.",
+          url: 'https://firebase.google.com/docs/hosting'
+        },
+        {
+          name: 'Authentication',
+          icon: <KeyRound className="w-9 h-9" />,
+          description: "Proporciona servicios de backend fáciles de usar, SDK seguros y bibliotecas de UI listas para usar para autenticar a los usuarios en tu aplicación. Admite proveedores de identidad como correo electrónico, redes sociales y más.",
+          url: 'https://firebase.google.com/docs/auth'
+        }
+    ],
+    tools: [
+      {
+        name: 'Firebase',
+        icon: <Flame className="w-10 h-10" />,
+        description: "Una plataforma de desarrollo de aplicaciones de Google que ayuda a crear, mejorar y hacer crecer apps. Ofrece una amplia gama de herramientas y servicios como bases de datos, autenticación, hosting y más.",
+        url: 'https://firebase.google.com/'
+      },
+      {
+        name: 'Git',
+        icon: <GitBranch className="w-10 h-10" />,
+        description: "Un sistema de control de versiones distribuido, diseñado para manejar todo, desde proyectos pequeños hasta muy grandes, con velocidad y eficiencia. Es fundamental para el desarrollo de software colaborativo.",
+        url: 'https://git-scm.com/'
+      },
+      {
+        name: 'GitHub',
+        icon: <Github className="w-10 h-10" />,
+        description: "Una plataforma de alojamiento para el control de versiones con Git. Se utiliza para almacenar, gestionar y colaborar en proyectos de software. Incluye herramientas para seguimiento de problemas, integración continua y más.",
+        url: 'https://github.com/'
+      },
+      {
+        name: 'VS Code',
+        icon: <Code className="w-10 h-10" />,
+        description: "Un editor de código fuente ligero pero potente que se ejecuta en el escritorio. Viene con soporte integrado para JavaScript, TypeScript y Node.js, y un rico ecosistema de extensiones para otros lenguajes y herramientas.",
+        url: 'https://code.visualstudio.com/'
+      }
+    ]
+  };
+  
+  const TechCard = ({ tech }: { tech: typeof technologies.languages[0] }) => (
+    <Dialog>
+      <DialogTrigger asChild>
+        <button className="flex w-full flex-col items-center justify-start gap-2 text-center group p-4 rounded-lg transition-all duration-300 hover:bg-secondary">
+          <div className="w-16 h-16 flex items-center justify-center rounded-lg bg-muted text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
             {tech.icon}
           </div>
-          {tech.name}
-        </DialogTitle>
-        <DialogDescription className="pt-4 text-left">
-          {tech.description}
-        </DialogDescription>
-      </DialogHeader>
-      <Button asChild>
-        <Link href={tech.url} target="_blank" rel="noopener noreferrer">
-          Página Oficial <ArrowRight className="ml-2 h-4 w-4" />
-        </Link>
-      </Button>
-    </DialogContent>
-  </Dialog>
-);
+          <span className="text-sm font-medium">{tech.name}</span>
+        </button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[425px]">
+        <DialogHeader>
+          <DialogTitle className="text-2xl text-primary flex items-center gap-4">
+            <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-muted text-primary shrink-0">
+              {tech.icon}
+            </div>
+            {tech.name}
+          </DialogTitle>
+          <DialogDescription className="pt-4 text-left">
+            {tech.description}
+          </DialogDescription>
+        </DialogHeader>
+        <Button asChild>
+          <Link href={tech.url} target="_blank" rel="noopener noreferrer">
+            Página Oficial <ArrowRight className="ml-2 h-4 w-4" />
+          </Link>
+        </Button>
+      </DialogContent>
+    </Dialog>
+  );
 
 export default function Home() {
   return (
@@ -176,12 +177,12 @@ export default function Home() {
               </div>
               <div className="flex justify-center">
                   <Image
-                      src="/jose.jpg"
+                      src="https://placehold.co/450x450.png"
                       width="450"
                       height="450"
-                      alt="Foto de Jose David en un evento para desarrolladores"
+                      alt="Foto de Jose David"
                       className="mx-auto aspect-square overflow-hidden rounded-xl object-cover"
-                      unoptimized
+                      data-ai-hint="person"
                   />
               </div>
           </div>
