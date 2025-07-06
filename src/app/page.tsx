@@ -139,12 +139,12 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-background">
+      <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-background flex items-center">
         <div className="container px-4 md:px-6 grid gap-10 lg:grid-cols-2 lg:gap-16">
           <div className="flex flex-col justify-center space-y-6">
             <div className="space-y-4">
               <h1 className="text-5xl font-bold tracking-tighter sm:text-6xl md:text-7xl xl:text-8xl/none text-primary">
-                José David Borja Vásquez
+                José David Borja Vasquez
               </h1>
               <h2 className="text-xl font-medium tracking-wide text-foreground/90 md:text-2xl">
                 Developer with AI

@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
         <div className="mt-8 text-center text-sm">
-          <p>&copy; {currentYear} Jose David Borja Vasquez. Todos los derechos reservados.</p>
+          <p>Programado en Visual Studio Code y desarrollado con Next.js, React y Tailwind CSS.</p>
         </div>
       </div>
     </footer>
