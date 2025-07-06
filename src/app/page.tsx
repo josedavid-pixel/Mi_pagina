@@ -144,7 +144,7 @@ export default function Home() {
           <div className="flex flex-col justify-center space-y-6">
             <div className="space-y-4">
               <h1 className="text-5xl font-bold tracking-tighter sm:text-6xl md:text-7xl xl:text-8xl/none text-primary">
-                José David Borja
+                José David Borja Vásquez
               </h1>
               <h2 className="text-xl font-medium tracking-wide text-foreground/90 md:text-2xl">
                 Developer with AI
