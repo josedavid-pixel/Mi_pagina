@@ -143,11 +143,14 @@ export default function Home() {
         <div className="container px-4 md:px-6 grid gap-10 lg:grid-cols-2 lg:gap-16">
           <div className="flex flex-col justify-center space-y-6">
             <div className="space-y-4">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-6xl/none text-primary">
-                Desarrollador de Software y Entusiasta de la IA
+              <h1 className="text-5xl font-bold tracking-tighter sm:text-6xl md:text-7xl xl:text-8xl/none text-primary">
+                José David Borja
               </h1>
+              <h2 className="text-xl font-medium tracking-wide text-foreground/90 md:text-2xl">
+                Developer with AI
+              </h2>
               <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                Hola, soy Jose David. Apasionado por crear soluciones innovadoras que combinan el desarrollo de software y el poder de la inteligencia artificial.
+                Apasionado por crear soluciones innovadoras que combinan el desarrollo de software y el poder de la inteligencia artificial.
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
