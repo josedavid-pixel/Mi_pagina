@@ -91,7 +91,7 @@ function ContactForm() {
                     <FormItem>
                       <FormLabel>Nombre</FormLabel>
                       <FormControl>
-                        <Input placeholder="Tu Nombre" {...field} disabled={isSubmitting} />
+                        <Input placeholder="Tu Nombre" {...field} disabled={isSubmitting} autoComplete="name" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -104,7 +104,7 @@ function ContactForm() {
                     <FormItem>
                       <FormLabel>Email</FormLabel>
                       <FormControl>
-                        <Input placeholder="tu@email.com" {...field} disabled={isSubmitting} />
+                        <Input placeholder="tu@email.com" {...field} disabled={isSubmitting} autoComplete="email" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -118,7 +118,7 @@ function ContactForm() {
                   <FormItem>
                     <FormLabel>Número de Teléfono (Opcional)</FormLabel>
                     <FormControl>
-                      <Input placeholder="Ej: +591 71234567" {...field} disabled={isSubmitting} />
+                      <Input placeholder="Ej: +591 71234567" {...field} disabled={isSubmitting} autoComplete="tel" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
