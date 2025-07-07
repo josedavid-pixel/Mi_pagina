@@ -1,16 +1,14 @@
 'use client'
 
 import Image from "next/image";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import ContactForm from "@/components/contact-form";
 import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Star, Atom, GitBranch, Github, Flame, Code, CodeXml, Palette, Wind, ArrowRight, Database, Server, KeyRound, ExternalLink } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 
 
+import { CodeXml, Palette, Atom, Wind, Database, Server, KeyRound, Flame, GitBranch, Github, Code, ArrowRight } from 'lucide-react';
 const technologies = {
     languages: [
       {

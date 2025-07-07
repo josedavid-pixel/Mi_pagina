@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button';
 import { Linkedin, GithubIcon, Twitter, Instagram, CodeXml } from 'lucide-react';
 
 const Footer: React.FC = () => {
-  const currentYear = new Date().getFullYear();
   return (
     <footer className="bg-muted text-muted-foreground">
       <div className="container mx-auto px-4 py-8">
@@ -41,7 +40,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
         <div className="mt-8 text-center text-sm">
-          <p>Todos los derechos reservados por José David Borja Vasquez 😎</p>
+          <p>Todos los derechos reservados por José David Borja Vasquez 😎 </p>
         </div>
       </div>
     </footer>
