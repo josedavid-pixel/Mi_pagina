@@ -6,9 +6,8 @@ import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-
-
 import { CodeXml, Palette, Atom, Wind, Database, Server, KeyRound, Flame, GitBranch, Github, Code, ArrowRight } from 'lucide-react';
+
 const technologies = {
     languages: [
       {
@@ -177,7 +176,7 @@ export default function Home() {
               </div>
               <div className="flex justify-center">
                   <Image
-                      src="/images/jose.png"
+                      src="https://placehold.co/450x450.png"
                       width="450"
                       height="450"
                       alt="Foto de Jose David"
