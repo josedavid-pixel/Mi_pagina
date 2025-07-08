@@ -8,14 +8,25 @@ import { ChevronLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { remark } from 'remark';
 import html from 'remark-html';
-import type { Metadata } from 'next';
+import type { Metadata, ResolvingMetadata } from 'next'; // Importar ResolvingMetadata
+
+// Definir el tipo de los parámetros para la página dinámica
+interface PageProps {
+    params: {
+        slug: string;
+    };
+}
 
 // In a real app, you would fetch this data from a CMS or database.
 const getPostData = (slug: string) => {
     return posts.find(p => p.slug === slug);
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+// Usar PageProps en generateMetadata
+export async function generateMetadata(
+    { params }: PageProps,
+    parent: ResolvingMetadata // Incluir parent como sugiere la documentación de Next.js
+): Promise<Metadata> {
     const post = getPostData(params.slug);
 
     if (!post) {
@@ -30,7 +41,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     }
 }
 
-export default async function BlogPostPage({ params }: { params: { slug:string } }) {
+// Usar PageProps en el componente de página
+export default async function BlogPostPage({ params }: PageProps) {
     const post = getPostData(params.slug);
 
     if (!post) {
@@ -41,10 +53,10 @@ export default async function BlogPostPage({ params }: { params: { slug:string }
             </div>
         );
     }
-    
+
     const postDate = new Date(post.date);
     const formattedDate = format(postDate, "d 'de' MMMM, yyyy", { locale: es });
-    
+
     const processedContent = await remark()
         .use(html)
         .process(post.content);
@@ -69,7 +81,7 @@ export default async function BlogPostPage({ params }: { params: { slug:string }
                 <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl">{post.title}</h1>
                 <p className="text-muted-foreground">Publicado el {formattedDate}</p>
             </div>
-            
+
             <div className="relative w-full mb-12 overflow-hidden aspect-video rounded-xl">
                 <Image
                     src={post.image}
@@ -80,9 +92,9 @@ export default async function BlogPostPage({ params }: { params: { slug:string }
                 />
             </div>
 
-            <div 
+            <div
                 className="prose prose-lg dark:prose-invert max-w-none"
-                dangerouslySetInnerHTML={{ __html: contentHtml }} 
+                dangerouslySetInnerHTML={{ __html: contentHtml }}
             />
         </article>
     );
