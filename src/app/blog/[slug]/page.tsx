@@ -8,7 +8,7 @@ import { ChevronLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { remark } from 'remark';
 import html from 'remark-html';
-import type { Metadata, ResolvingMetadata } from 'next'; // Importar ResolvingMetadata
+import type { Metadata } from 'next'; // Eliminado ResolvingMetadata ya que 'parent' no se usa
 
 // Definir el tipo de los parámetros para la página dinámica
 interface PageProps {
@@ -24,8 +24,7 @@ const getPostData = (slug: string) => {
 
 // Usar PageProps en generateMetadata
 export async function generateMetadata(
-    { params }: PageProps,
-    parent: ResolvingMetadata // Incluir parent como sugiere la documentación de Next.js
+    { params }: PageProps // Eliminado 'parent: ResolvingMetadata'
 ): Promise<Metadata> {
     const post = getPostData(params.slug);
 
